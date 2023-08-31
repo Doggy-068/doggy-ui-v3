@@ -1,15 +1,20 @@
 {
   "name": "doggy-ui-v3",
   "description": "A component library for vue3.",
-  "private": true,
+  "author": {
+    "name": "Doggy-068",
+    "url": "https://github.com/Doggy-068"
+  },
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "build": "vue-tsc && vite build",
-    "docs:dev": "vitepress dev docs"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs"
   },
-  "dependencies": {
-    "vue": "^3.3.4"
+  "peerDependencies": {
+    "vue": "^3.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
@@ -23,6 +28,10 @@
     "vite": "^4.4.9",
     "vite-plugin-dts": "^3.5.2",
     "vitepress": "^1.0.0-rc.4",
+    "vue": "^3.3.4",
     "vue-tsc": "^1.8.8"
+  },
+  "engines": {
+    "node": ">= 18"
   }
 }
