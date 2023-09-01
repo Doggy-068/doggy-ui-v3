@@ -4,6 +4,7 @@ import mdPlugin from './plugins/md-plugin'
 import path from 'path'
 
 export default defineConfig({
+  base: '/doggy-ui-v3/',
   srcDir: './pages',
   title: name,
   description,
