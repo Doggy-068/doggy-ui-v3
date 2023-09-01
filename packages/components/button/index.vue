@@ -8,9 +8,11 @@ defineOptions({
 const props = withDefaults(defineProps<{
   type?: Type,
   size?: Exclude<Size, 'large'>
+  disabled?: boolean
 }>(), {
   type: 'primary',
-  size: 'default'
+  size: 'default',
+  disabled: false
 })
 
 const emits = defineEmits<{
@@ -19,7 +21,7 @@ const emits = defineEmits<{
 </script>
 
 <template>
-  <button class="doggy-ui-v3-button" :class="[`${props.type}`, `${props.size}`]" @click="emits('click')">
+  <button class="doggy-ui-v3-button" :class="[`${props.type}`, `${props.size}`]" @click="emits('click')" :disabled="props.disabled">
     <slot></slot>
   </button>
 </template>
@@ -42,12 +44,20 @@ const emits = defineEmits<{
       &:hover {
         background: var(--du--v3--#{$type}--color--opacity);
       }
+
+      &:disabled {
+        background: var(--du--v3--#{$type}--color--disable);
+      }
     }
   }
 
+  &:disabled {
+    cursor: not-allowed;
+  }
+
   &.small {
-    height: 24px;
-    line-height: 24px;
+    height: 28px;
+    line-height: 28px;
     font-size: 14px;
   }
 

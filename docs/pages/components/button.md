@@ -15,3 +15,11 @@ button/type
 button/size
 
 :::
+
+## Disabled
+
+::: demo
+
+button/disabled
+
+:::

@@ -10,5 +10,5 @@ hero:
       link: /guides/installation
     - theme: alt
       text: Github
-      link: https://github.com/
+      link: https://github.com/Doggy-068/doggy-ui-v3
 ---

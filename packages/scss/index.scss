@@ -1,9 +1,19 @@
+@use 'sass:color';
+
+$primary-color: #0099cc;
+$warning-color: #ff9900;
+$error-color: #ff6666;
+
 :root {
   --du--v3--white: #ffffff;
-  --du--v3--primary--color: #0099cc;
-  --du--v3--primary--color--opacity: #0099ccb7;
-  --du--v3--warning--color: #ff9900;
-  --du--v3--warning--color--opacity: #ff9900b7;
-  --du--v3--error--color: #ff6666;
-  --du--v3--error--color--opacity: #ff6666b7;
+
+  --du--v3--primary--color: #{$primary-color};
+  --du--v3--primary--color--opacity: #{color.adjust($primary-color, $alpha: -0.2)};
+  --du--v3--primary--color--disable: #{color.adjust($primary-color, $alpha: -0.4)};
+  --du--v3--warning--color: #{$warning-color};
+  --du--v3--warning--color--opacity: #{color.adjust($warning-color, $alpha: -0.2)};
+  --du--v3--warning--color--disable: #{color.adjust($warning-color, $alpha: -0.4)};
+  --du--v3--error--color: #{$error-color};
+  --du--v3--error--color--opacity: #{color.adjust($error-color, $alpha: -0.2)};
+  --du--v3--error--color--disable: #{color.adjust($error-color, $alpha: -0.4)};
 }

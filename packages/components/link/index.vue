@@ -29,6 +29,7 @@ const props = withDefaults(defineProps<{
 
 .doggy-ui-v3-link {
   cursor: pointer;
+  font-size: 16px;
 
   &:not(:first-of-type) {
     margin-left: 0.5em;
@@ -36,8 +37,19 @@ const props = withDefaults(defineProps<{
 
   @each $type in $types {
     &.#{$type} {
+      color: var(--du--v3--#{$type}--color);
+
+      &:hover {
+        text-decoration: underline var(--du--v3--#{$type}--color);
+      }
+
       a {
-        color: var(--du--v3--#{$type}--color);
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
   }
