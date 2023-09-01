@@ -32,7 +32,6 @@
     "vite-env.d.ts",
     "packages/**/*.ts",
     "packages/**/*.vue",
-    "examples/**/*.vue",
     "docs/**/*.ts",
     "docs/**/*.vue"
   ],

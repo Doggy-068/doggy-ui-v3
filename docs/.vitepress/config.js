@@ -21,7 +21,8 @@ export default defineConfig({
       '/components': {
         items: [
           { text: 'Button', link: '/components/button' },
-          { text: 'Link', link: '/components/link' }
+          { text: 'Link', link: '/components/link' },
+          { text: 'Progress', link: '/components/progress' }
         ]
       }
     }
