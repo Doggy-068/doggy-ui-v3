@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { getCurrentInstance } from 'vue'
 import highlight from '../utils/highlight'
 
-const examples = (window as any).examples
+const examples = getCurrentInstance()?.appContext.config.globalProperties.examples
 
 const props = defineProps<{
   path: string

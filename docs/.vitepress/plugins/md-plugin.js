@@ -13,11 +13,11 @@ export default md => {
         const sourceFile = sourceFileToken.children?.[0].content ?? ''
         const source = (() => {
           if (sourceFileToken.type === 'inline') {
-            return fs.readFileSync(path.resolve(__dirname, '../../../examples', `${sourceFile}.vue`), 'utf-8')
+            return fs.readFileSync(path.resolve(__dirname, '../../examples', `${sourceFile}.vue`), 'utf-8')
           }
         })()
         if (!source) throw new Error(`Invalid: ${sourceFile}`)
-        return `<VpDemo path="../../../examples/${sourceFile}.vue" code="${encodeURIComponent(source)}">`
+        return `<VpDemo path="../../examples/${sourceFile}.vue" code="${encodeURIComponent(source)}">`
       }
       return '</VpDemo>'
     }
