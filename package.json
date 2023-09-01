@@ -5,7 +5,12 @@
     "name": "Doggy-068",
     "url": "https://github.com/Doggy-068"
   },
+  "homepage": "https://doggy-068.github.io/doggy-ui-v3/",
+  "repository": {
+    "url": "https://github.com/Doggy-068/doggy-ui-v3"
+  },
   "private": false,
+  "license": "MIT",
   "version": "0.0.0",
   "type": "module",
   "main": "index.js",

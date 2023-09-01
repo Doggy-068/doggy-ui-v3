@@ -23,7 +23,8 @@ export default defineConfig({
         items: [
           { text: 'Button', link: '/components/button' },
           { text: 'Link', link: '/components/link' },
-          { text: 'Progress', link: '/components/progress' }
+          { text: 'Progress', link: '/components/progress' },
+          { text: 'Input', link: '/components/input' }
         ]
       }
     }
