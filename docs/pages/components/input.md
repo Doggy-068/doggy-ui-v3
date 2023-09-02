@@ -7,3 +7,11 @@
 input/size
 
 :::
+
+## Clearable
+
+::: demo
+
+input/clearable
+
+:::
