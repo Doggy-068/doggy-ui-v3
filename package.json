@@ -13,6 +13,9 @@
   "license": "MIT",
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist/**"
+  ],
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {

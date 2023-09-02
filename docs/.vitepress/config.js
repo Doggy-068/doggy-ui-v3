@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import { name, description } from '../../package.json'
 import mdPlugin from './plugins/md-plugin'
 import path from 'path'
+import fs from 'fs'
 
 export default defineConfig({
   base: '/doggy-ui-v3/',
@@ -20,12 +21,16 @@ export default defineConfig({
         ]
       },
       '/components': {
-        items: [
-          { text: 'Button', link: '/components/button' },
-          { text: 'Link', link: '/components/link' },
-          { text: 'Progress', link: '/components/progress' },
-          { text: 'Input', link: '/components/input' }
-        ]
+        items: (() => {
+          const files = fs.readdirSync(path.resolve(__dirname, '../pages/components'))
+          return files.map(file => {
+            const component = file.slice(0, -3)
+            return {
+              text: `${component[0].toUpperCase()}${component.slice(1)}`,
+              link: `/components/${component}`
+            }
+          })
+        })()
       }
     }
   },
