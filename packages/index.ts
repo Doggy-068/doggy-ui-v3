@@ -4,11 +4,13 @@ import DuLink from './components/link/index.vue'
 import DuProgress from './components/progress/index.vue'
 import DuInput from './components/input/index.vue'
 import message from './components/message'
+import DuTag from './components/tag/index.vue'
 
 export {
   DuButton,
   DuLink,
   DuProgress,
   DuInput,
-  message
+  message,
+  DuTag
 }
