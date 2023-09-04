@@ -5,6 +5,7 @@ import DuProgress from './components/progress/index.vue'
 import DuInput from './components/input/index.vue'
 import message from './components/message'
 import DuTag from './components/tag/index.vue'
+import { DuCheckbox, DuCheckboxOption } from './components/checkbox'
 
 export {
   DuButton,
@@ -12,5 +13,7 @@ export {
   DuProgress,
   DuInput,
   message,
-  DuTag
+  DuTag,
+  DuCheckbox,
+  DuCheckboxOption
 }

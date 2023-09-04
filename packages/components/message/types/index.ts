@@ -1,7 +1,5 @@
-type Type = 'success' | 'error' | 'info'
-
 export type Props = {
   text: string
-  type?: Type
+  type?: 'success' | 'error' | 'info'
   duration?: number
 }
