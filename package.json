@@ -20,6 +20,7 @@
   "types": "index.d.ts",
   "scripts": {
     "prepare": "husky install",
+    "test:unit": "vitest run",
     "build": "vue-tsc && vite build",
     "docs:dev": "vitepress dev docs",
     "docs:deploy": "vitepress build docs && gh-pages -d docs/.vitepress/dist"
@@ -31,15 +32,18 @@
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@vitejs/plugin-vue": "^4.3.1",
+    "@vue/test-utils": "^2.4.1",
     "gh-pages": "^6.0.0",
     "highlight.js": "^11.8.0",
     "husky": "^8.0.3",
+    "jsdom": "^22.1.0",
     "markdown-it-container": "^3.0.0",
     "sass": "^1.66.1",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
     "vite-plugin-dts": "^3.5.2",
     "vitepress": "^1.0.0-rc.4",
+    "vitest": "^0.34.3",
     "vue": "^3.3.4",
     "vue-tsc": "^1.8.8"
   },
