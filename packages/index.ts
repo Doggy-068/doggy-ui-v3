@@ -6,6 +6,7 @@ import DuInput from './components/input/index.vue'
 import message from './components/message'
 import DuTag from './components/tag/index.vue'
 import { DuCheckbox, DuCheckboxOption } from './components/checkbox'
+import { DuRadio, DuRadioOption } from './components/radio'
 
 export {
   DuButton,
@@ -15,5 +16,7 @@ export {
   message,
   DuTag,
   DuCheckbox,
-  DuCheckboxOption
+  DuCheckboxOption,
+  DuRadio,
+  DuRadioOption
 }

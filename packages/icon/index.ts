@@ -5,6 +5,8 @@ import IconInfo from './components/info/index.vue'
 import IconSuccess from './components/success/index.vue'
 import IconSquare from './components/square/index.vue'
 import IconCorrect from './components/correct/index.vue'
+import IconCircle from './components/circle/index.vue'
+import IconSelect from './components/select/index.vue'
 
 export {
   IconClear,
@@ -13,5 +15,7 @@ export {
   IconInfo,
   IconSuccess,
   IconSquare,
-  IconCorrect
+  IconCorrect,
+  IconCircle,
+  IconSelect
 }
