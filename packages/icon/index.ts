@@ -7,6 +7,8 @@ import IconSquare from './components/square/index.vue'
 import IconCorrect from './components/correct/index.vue'
 import IconCircle from './components/circle/index.vue'
 import IconSelect from './components/select/index.vue'
+import IconLeft from './components/left/index.vue'
+import IconRight from './components/right/index.vue'
 
 export {
   IconClear,
@@ -17,5 +19,7 @@ export {
   IconSquare,
   IconCorrect,
   IconCircle,
-  IconSelect
+  IconSelect,
+  IconLeft,
+  IconRight
 }
