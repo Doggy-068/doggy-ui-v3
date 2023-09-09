@@ -15,3 +15,11 @@ input/size
 input/clearable
 
 :::
+
+## Modifier
+
+::: demo
+
+input/modifier
+
+:::

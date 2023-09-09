@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, nextTick } from 'vue'
 import type { Size } from '../../types'
 import { IconClear } from '../../icon'
 
@@ -8,19 +8,40 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<{
-  modelValue: string
+  modelValue: string | number
+  modelModifiers?: any
   size?: Exclude<Size, 'large'>
   clearable?: boolean
 }>(), {
+  modelModifiers: {},
   size: 'default',
   clearable: false
 })
 
 const emits = defineEmits<{
-  (e: 'update:modelValue', val: string): void
+  (e: 'update:modelValue', val: typeof props.modelValue): void
 }>()
 
 const inputRef = ref<HTMLInputElement>()
+
+const onInput = () => {
+  const value = (() => {
+    const text = inputRef.value!.value
+    if (props.modelModifiers.trim) {
+      return text.trim()
+    } else if (props.modelModifiers.number) {
+      return parseFloat(text) || 0
+    } else if (props.modelModifiers.capitalize) {
+      return text.slice(0, 1).toUpperCase() + text.slice(1).toLowerCase()
+    } else {
+      return text
+    }
+  })()
+  emits('update:modelValue', value)
+  nextTick(() => {
+    inputRef.value!.value = props.modelValue.toString()
+  })
+}
 
 const handleClearClick = () => {
   emits('update:modelValue', '')
@@ -30,7 +51,7 @@ const handleClearClick = () => {
 
 <template>
   <div class="doggy-ui-v3-input" :class="[`${props.size}`]">
-    <input ref="inputRef" :value="props.modelValue" @input="emits('update:modelValue', ($event.target as HTMLInputElement).value)" />
+    <input ref="inputRef" :value="props.modelValue" @input="onInput" />
     <icon-clear v-if="props.clearable" class="clear" @click="handleClearClick" />
   </div>
 </template>
