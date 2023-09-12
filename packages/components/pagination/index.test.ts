@@ -1,9 +1,9 @@
 import { describe, test, expect } from 'vitest'
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, VueWrapper } from '@vue/test-utils'
 import DuPagination from './index.vue'
 
 describe('test du-pagination', () => {
-  const wrapper = shallowMount(DuPagination, {
+  const wrapper: VueWrapper = shallowMount(DuPagination, {
     props: {
       total: 100,
       index: 1,

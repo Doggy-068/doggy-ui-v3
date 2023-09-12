@@ -1,18 +1,13 @@
 <script setup lang="ts">
 import { ref, nextTick } from 'vue'
-import type { Size } from '../../types'
 import { IconClear } from '../../icon'
+import type { Props } from './types'
 
 defineOptions({
   name: 'du-input'
 })
 
-const props = withDefaults(defineProps<{
-  modelValue: string | number
-  modelModifiers?: any
-  size?: Exclude<Size, 'large'>
-  clearable?: boolean
-}>(), {
+const props = withDefaults(defineProps<Props>(), {
   modelModifiers: {},
   size: 'default',
   clearable: false

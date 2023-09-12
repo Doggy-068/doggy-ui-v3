@@ -1,12 +1,13 @@
 import { describe, test, expect } from 'vitest'
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, VueWrapper } from '@vue/test-utils'
 import DuInput from './index.vue'
+import type { Props } from './types'
 
 describe('test du-input', () => {
-  const wrapper = shallowMount(DuInput, {
+  const wrapper: VueWrapper = shallowMount(DuInput, {
     props: {
       modelValue: '',
-      'onUpdate:modelValue': (val: string) => wrapper.setProps({ modelValue: val }),
+      'onUpdate:modelValue': (val: Props['modelValue']) => wrapper.setProps({ modelValue: val }),
       clearable: true
     }
   })
