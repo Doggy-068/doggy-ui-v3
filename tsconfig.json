@@ -32,6 +32,8 @@
     "vite-env.d.ts",
     "packages/**/*.ts",
     "packages/**/*.vue",
+    "play/**/*.ts",
+    "play/**/*.vue",
     "docs/**/*.ts",
     "docs/**/*.vue"
   ],

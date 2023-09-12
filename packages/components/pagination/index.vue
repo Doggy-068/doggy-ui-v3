@@ -52,6 +52,7 @@ const handleNextItemClick = () => {
   align-items: center;
 
   .item {
+    flex-shrink: 0;
     cursor: pointer;
     display: flex;
     align-items: center;

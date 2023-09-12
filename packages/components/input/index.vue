@@ -62,6 +62,7 @@ const handleClearClick = () => {
   align-items: center;
 
   input {
+    box-sizing: border-box;
     font-size: inherit;
     border: 1px solid #cccccc;
     border-radius: 4px;
@@ -71,6 +72,7 @@ const handleClearClick = () => {
 
     &:focus {
       border-color: var(--du--v3--primary--color);
+      outline: none;
     }
   }
 

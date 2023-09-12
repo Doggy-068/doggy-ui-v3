@@ -33,6 +33,7 @@ const handleItemClick = () => {
   display: flex;
   align-items: center;
   cursor: pointer;
+  flex-shrink: 0;
 
   &:not(:first-of-type) {
     margin-left: 1em;
@@ -43,7 +44,7 @@ const handleItemClick = () => {
   }
 
   .icon {
-    margin-right: 0.5em;
+    margin-right: 0.3em;
   }
 }
 </style>

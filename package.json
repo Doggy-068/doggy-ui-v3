@@ -20,6 +20,7 @@
   "types": "index.d.ts",
   "scripts": {
     "prepare": "husky install",
+    "dev": "vite --config play/vite.config.ts",
     "test:unit": "vitest run",
     "build": "vue-tsc && vite build",
     "docs:dev": "vitepress dev docs",

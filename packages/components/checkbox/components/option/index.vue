@@ -39,6 +39,7 @@ const handleItemClick = () => {
 
 <style lang="scss">
 .doggy-ui-v3-checkbox-option {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -52,7 +53,7 @@ const handleItemClick = () => {
   }
 
   .icon {
-    margin-right: 0.5em;
+    margin-right: 0.3em;
   }
 }
 </style>

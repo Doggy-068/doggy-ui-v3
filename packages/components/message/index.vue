@@ -33,9 +33,9 @@ const icon = computed(() => {
 .doggy-ui-v3-message {
   font-size: 14px;
   box-sizing: border-box;
-  width: 50vw;
-  max-width: 240px;
-  height: 2em;
+  width: fit-content;
+  max-width: calc(100vw - 2rem);
+  min-height: 2em;
   padding: 0.5em;
   border-radius: 4px;
   display: flex;
@@ -49,6 +49,7 @@ const icon = computed(() => {
   .text {
     margin-left: 0.5em;
     color: #ffffff;
+    word-break: break-all;
   }
 
   &.info {

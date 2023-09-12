@@ -21,5 +21,6 @@ defineEmits<{
 <style lang="scss">
 .doggy-ui-v3-radio {
   display: flex;
+  font-size: 16px;
 }
 </style>

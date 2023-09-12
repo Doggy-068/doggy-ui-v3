@@ -30,6 +30,8 @@ const emits = defineEmits<{
 @import '../../scss/variable.scss';
 
 .doggy-ui-v3-button {
+  cursor: pointer;
+  border: none;
   color: var(--du--v3--white);
   padding: 0 0.5em;
 

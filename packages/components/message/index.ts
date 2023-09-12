@@ -14,8 +14,8 @@ export default (() => {
     const vNode = h(DuMessage, { type: option.type, text: option.text })
     const box = document.createElement('div')
     box.className = 'doggy-ui-v3-message-box'
-    box.style.marginTop = '1em'
-    box.style.marginLeft = '1em'
+    box.style.marginTop = '1rem'
+    box.style.marginLeft = '1rem'
     container.appendChild(box)
     render(vNode, box)
     setTimeout(() => {
