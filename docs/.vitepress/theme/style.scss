@@ -1,0 +1,23 @@
+.api-table {
+  table {
+    width: 100%;
+    display: table;
+
+    tr {
+      border: none;
+      border-bottom: 1px solid var(--vp-c-divider);
+
+      &:nth-child(2n) {
+        background-color: transparent;
+      }
+    }
+
+    th {
+      border: none;
+    }
+
+    td {
+      border: none;
+    }
+  }
+}

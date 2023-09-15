@@ -24,7 +24,8 @@
     "test:unit": "vitest run",
     "build": "vue-tsc && vite build",
     "docs:dev": "vitepress dev docs",
-    "docs:deploy": "vitepress build docs && gh-pages -d docs/.vitepress/dist"
+    "docs:deploy": "vitepress build docs && gh-pages -d docs/.vitepress/dist",
+    "prettier:docs:md": "prettier --write docs/**/*.md"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
@@ -39,6 +40,7 @@
     "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "markdown-it-container": "^3.0.0",
+    "prettier": "^3.0.3",
     "sass": "^1.66.1",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",

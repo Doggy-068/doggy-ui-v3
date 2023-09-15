@@ -1,5 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import VpDemo from '../../components/vp-demo.vue'
+import './style.scss'
 
 export default {
   extends: DefaultTheme,

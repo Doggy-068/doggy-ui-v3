@@ -2,6 +2,11 @@ import markdownItContainer from 'markdown-it-container'
 import fs from 'fs'
 import path from 'path'
 
+const tableWrapper = (md) => {
+  md.renderer.rules.table_open = () => '<div class="api-table"><table>'
+  md.renderer.rules.table_close = () => '</table></div>'
+}
+
 export default md => {
   md.use(markdownItContainer, 'demo', {
     validate(params) {
@@ -22,4 +27,5 @@ export default md => {
       return '</VpDemo>'
     }
   })
+  md.use(tableWrapper)
 }
