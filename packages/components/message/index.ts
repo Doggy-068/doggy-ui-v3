@@ -1,25 +1,32 @@
 import { h, render } from 'vue'
 import DuMessage from './index.vue'
-import type { Props as Option } from './types'
+import type { Props } from './types'
 
-export default (() => {
-  const container = document.createElement('div')
-  container.className = 'doggy-ui-v3-message-container'
-  container.style.position = 'fixed'
-  container.style.top = '0'
-  container.style.zIndex = '999'
-  document.body.appendChild(container)
+type Option = Omit<Props, 'idx'> & { duration: number }
 
-  return (option: Option) => {
-    const vNode = h(DuMessage, { type: option.type, text: option.text })
-    const box = document.createElement('div')
-    box.className = 'doggy-ui-v3-message-box'
-    box.style.marginTop = '1rem'
-    box.style.marginLeft = '1rem'
-    container.appendChild(box)
-    render(vNode, box)
-    setTimeout(() => {
-      container.removeChild(box)
-    }, option.duration || 3000)
+let seed = 1
+
+export default (option: Option) => {
+  const box = document.createElement('div')
+  box.style.width = '0'
+  box.style.height = '0'
+  box.style.overflow = 'visible'
+  const vNode = h(DuMessage, { idx: seed++, type: option.type, text: option.text })
+  render(vNode, box)
+  document.body.appendChild(box)
+
+  const onOtherDestroy = () => {
+    vNode.component?.exposed!.updateIdx()
   }
-})()
+  addEventListener('doggy-ui-v3-message-destroy', onOtherDestroy)
+
+  setTimeout(() => {
+    seed--
+    removeEventListener('doggy-ui-v3-message-destroy', onOtherDestroy)
+    vNode.component?.exposed!.updateRender(false)
+    dispatchEvent(new Event('doggy-ui-v3-message-destroy'))
+    setTimeout(() => {
+      document.body.removeChild(box)
+    }, 3000)
+  }, option.duration || 3000)
+}
