@@ -11,4 +11,15 @@ hero:
     - theme: alt
       text: Github
       link: https://github.com/Doggy-068/doggy-ui-v3
+
+features:
+  - icon: 🛠️
+    title: Type support
+    details: Written with TypeScript.
+  - icon: ⚡️
+    title: Pure
+    details: Without other dependencies.
+  - icon: ⭐️
+    title: Custom
+    details: Style customize by CSS variable.
 ---
