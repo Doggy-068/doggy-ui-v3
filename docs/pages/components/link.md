@@ -20,11 +20,11 @@ link/href
 
 ### Props
 
-| Name   | Description    | Type                                         | Default                |
-| ------ | -------------- | -------------------------------------------- | ---------------------- |
-| type   | link type      | `'primary' \| 'warning' \| 'error'`          | `'primary'`            |
-| href   | same as native | `string`                                     | `'javascript:void(0)'` |
-| target | same as native | `'_blank' \| '_parent' \| '_self' \| '_top'` | `'_self'`              |
+| Name   | Description                   | Type                                         | Default                |
+| ------ | ----------------------------- | -------------------------------------------- | ---------------------- |
+| type   | link type                     | `'primary' \| 'warning' \| 'error'`          | `'primary'`            |
+| href   | same as native anchor element | `string`                                     | `'javascript:void(0)'` |
+| target | same as native anchor element | `'_blank' \| '_parent' \| '_self' \| '_top'` | `'_self'`              |
 
 ### Slots
 

@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<{
   type: 'primary',
   progress: 0,
   indicator: false,
-  indicatorFormatter: (progress: number) => `${progress}%`
+  indicatorFormatter: undefined
 })
 </script>
 
@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<{
     <div class="orbit">
       <div class="bar" :style="{ width: `${props.progress}%` }"></div>
     </div>
-    <span v-if="props.indicator" class="indicator">{{ props.indicatorFormatter(props.progress) }}</span>
+    <span v-if="props.indicator && props.indicatorFormatter" class="indicator">{{ props.indicatorFormatter && props.indicatorFormatter(props.progress) }}</span>
   </div>
 </template>
 

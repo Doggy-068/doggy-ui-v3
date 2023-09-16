@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<{
   closeable?: boolean
 }>(), {
   size: 'default',
-  color: 'var(--du--v3--primary--color)',
+  color: undefined,
   closeable: false
 })
 
@@ -34,6 +34,7 @@ const emits = defineEmits<{
   align-items: center;
   padding: 0 0.5em;
   color: #ffffff;
+  background: var(--du--v3--primary--color);
 
   &:not(:first-of-type) {
     margin-left: 0.5em;
