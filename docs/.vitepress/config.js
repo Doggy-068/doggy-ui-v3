@@ -12,7 +12,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Guides', link: '/guides/installation' },
-      { text: 'Components', link: '/components/button' }
+      { text: 'Components', link: '/components/badge' }
     ],
     sidebar: {
       '/guides/': {

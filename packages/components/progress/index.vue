@@ -13,8 +13,7 @@ const props = withDefaults(defineProps<{
 }>(), {
   type: 'primary',
   progress: 0,
-  indicator: false,
-  indicatorFormatter: undefined
+  indicator: false
 })
 </script>
 

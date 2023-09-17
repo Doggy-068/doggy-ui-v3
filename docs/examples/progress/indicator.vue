@@ -6,6 +6,5 @@ const indicatorFormatter = (progress: number) => `-${progress}-`
 
 <template>
   <du-progress :progress="40" style="margin-bottom: 0.5em" />
-  <du-progress :progress="60" indicator style="margin-bottom: 0.5em" />
   <du-progress :progress="80" indicator :indicator-formatter="indicatorFormatter" />
 </template>

@@ -12,7 +12,6 @@ const props = withDefaults(defineProps<{
   closeable?: boolean
 }>(), {
   size: 'default',
-  color: undefined,
   closeable: false
 })
 

@@ -8,6 +8,7 @@ import DuTag from './components/tag/index.vue'
 import { DuCheckbox, DuCheckboxOption } from './components/checkbox'
 import { DuRadio, DuRadioOption } from './components/radio'
 import DuPagination from './components/pagination/index.vue'
+import DuBadge from './components/badge/index.vue'
 
 export {
   DuButton,
@@ -20,5 +21,6 @@ export {
   DuCheckboxOption,
   DuRadio,
   DuRadioOption,
-  DuPagination
+  DuPagination,
+  DuBadge
 }
