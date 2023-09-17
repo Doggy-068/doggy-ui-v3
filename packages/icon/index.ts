@@ -9,6 +9,7 @@ import IconCircle from './components/circle/index.vue'
 import IconSelect from './components/select/index.vue'
 import IconLeft from './components/left/index.vue'
 import IconRight from './components/right/index.vue'
+import IconStar from './components/star/index.vue'
 
 export {
   IconClear,
@@ -21,5 +22,6 @@ export {
   IconCircle,
   IconSelect,
   IconLeft,
-  IconRight
+  IconRight,
+  IconStar
 }

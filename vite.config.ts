@@ -8,7 +8,8 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
-      include: ['packages/**']
+      include: ['packages/**'],
+      exclude: ['packages/icon/**']
     })
   ],
   test: {

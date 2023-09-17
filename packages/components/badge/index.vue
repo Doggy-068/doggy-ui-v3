@@ -1,4 +1,8 @@
 <script setup lang="ts">
+defineOptions({
+  name: 'du-badge'
+})
+
 const props = withDefaults(defineProps<{
   text: string
   color?: string
