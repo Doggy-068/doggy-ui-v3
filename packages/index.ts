@@ -10,6 +10,7 @@ import { DuRadio, DuRadioOption } from './components/radio'
 import DuPagination from './components/pagination/index.vue'
 import DuBadge from './components/badge/index.vue'
 import DuRate from './components/rate/index.vue'
+import DuDialog from './components/dialog/index.vue'
 
 export {
   DuButton,
@@ -24,5 +25,6 @@ export {
   DuRadioOption,
   DuPagination,
   DuBadge,
-  DuRate
+  DuRate,
+  DuDialog
 }
