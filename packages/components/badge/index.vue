@@ -4,15 +4,20 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<{
-  text: string
   color?: string
-}>(), {})
+  value: string | number
+  numeric?: boolean
+  max?: number
+}>(), {
+  numeric: false,
+  max: 99
+})
 </script>
 
 <template>
   <div class="doggy-ui-v3-badge">
     <slot></slot>
-    <span class="badge" :style="{ background: props.color }">{{ props.text }}</span>
+    <span class="badge" :style="{ background: props.color }">{{ (props.numeric && typeof props.value === 'number' && !isNaN(props.value) && props.value > props.max) ? `${props.max}+` : props.value }}</span>
   </div>
 </template>
 

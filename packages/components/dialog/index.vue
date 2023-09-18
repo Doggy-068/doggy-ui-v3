@@ -7,7 +7,10 @@ defineOptions({
 
 const props = withDefaults(defineProps<{
   modelValue: boolean
-}>(), {})
+  close?: boolean
+}>(), {
+  close: true
+})
 
 const emits = defineEmits<{
   (e: 'update:modelValue', val: typeof props.modelValue): void
@@ -16,19 +19,40 @@ const emits = defineEmits<{
 
 <template>
   <Teleport to="body">
-    <div v-if="props.modelValue" class="doggy-ui-v3-dialog">
-      <div class="box">
-        <div class="header">
-          <icon-close class="icon" @click="emits('update:modelValue', false)" />
+    <Transition name="doggy-ui-v3-dialog">
+      <div v-if="props.modelValue" class="doggy-ui-v3-dialog">
+        <div class="box">
+          <div class="header">
+            <icon-close v-if="props.close" class="icon" @click="emits('update:modelValue', false)" />
+          </div>
+          <div class="content">
+            <slot></slot>
+          </div>
+          <div class="footer">
+            <slot name="footer"></slot>
+          </div>
         </div>
-        <slot></slot>
-        <slot name="footer"></slot>
       </div>
-    </div>
+    </Transition>
   </Teleport>
 </template>
 
 <style lang="scss">
+.doggy-ui-v3-dialog-enter-from,
+.doggy-ui-v3-dialog-leave-to {
+  opacity: 0;
+}
+
+.doggy-ui-v3-dialog-enter-active,
+.doggy-ui-v3-dialog-leave-active {
+  transition: opacity 0.2s;
+}
+
+.doggy-ui-v3-dialog-enter-to,
+.doggy-ui-v3-dialog-leave-from {
+  opacity: 1;
+}
+
 .doggy-ui-v3-dialog {
   position: fixed;
   z-index: 999;
@@ -42,21 +66,24 @@ const emits = defineEmits<{
   justify-content: center;
   font-size: 14px;
 
-  .header {
-    display: flex;
-    justify-content: flex-end;
-    padding-bottom: 1em;
-
-    .icon {
-      font-size: 16px;
-      cursor: pointer;
-    }
-  }
-
   .box {
     padding: 1em;
     background: #ffffff;
     border-radius: 4px;
+
+    .header {
+      display: flex;
+      justify-content: flex-end;
+
+      .icon {
+        font-size: 16px;
+        cursor: pointer;
+      }
+    }
+
+    .content {
+      padding: 1em 0;
+    }
   }
 }
 </style>

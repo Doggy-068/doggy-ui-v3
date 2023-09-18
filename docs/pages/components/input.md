@@ -41,3 +41,9 @@ input/modifier
 | trim       | remove white space at start and end |
 | number     | must input number                   |
 | capitalize | capitalized the first letter        |
+
+### Events
+
+| Name  | Description   | Params |
+| ----- | ------------- | ------ |
+| clear | cleared input | -      |

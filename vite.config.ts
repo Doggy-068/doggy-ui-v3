@@ -9,7 +9,10 @@ export default defineConfig({
     vue(),
     dts({
       include: ['packages/**'],
-      exclude: ['packages/icon/**']
+      exclude: [
+        'packages/icon/**',
+        'packages/**/*.test.ts'
+      ]
     })
   ],
   test: {

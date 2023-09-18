@@ -9,16 +9,24 @@ const props = withDefaults(defineProps<{
   type?: Type
   href?: string
   target?: '_blank' | '_parent' | '_self' | '_top'
+  disabled?: boolean
 }>(), {
   type: 'primary',
   href: 'javascript:void(0)',
-  target: '_self'
+  target: '_self',
+  disabled: false
 })
+
+const handleAnchorClick = (e: Event) => {
+  if (props.disabled) {
+    e.preventDefault()
+  }
+}
 </script>
 
 <template>
-  <span class="doggy-ui-v3-link" :class="[`${props.type}`]">
-    <a :href="props.href" :target="props.target">
+  <span class="doggy-ui-v3-link" :class="[`${props.type}`, props.disabled ? 'disabled' : '']">
+    <a :href="props.href" :target="props.target" @click="handleAnchorClick">
       <slot></slot>
     </a>
   </span>
@@ -49,6 +57,15 @@ const props = withDefaults(defineProps<{
 
         &:hover {
           text-decoration: none;
+        }
+      }
+
+      &.disabled {
+        cursor: not-allowed;
+        color: var(--du--v3--#{$type}--color--disable);
+
+        a {
+          cursor: not-allowed;
         }
       }
     }

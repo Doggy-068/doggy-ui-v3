@@ -15,6 +15,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emits = defineEmits<{
   (e: 'update:modelValue', val: typeof props.modelValue): void
+  (e: 'clear'): void
 }>()
 
 const inputRef = ref<HTMLInputElement>()
@@ -41,6 +42,7 @@ const onInput = () => {
 const handleClearClick = () => {
   emits('update:modelValue', '')
   inputRef.value?.focus()
+  emits('clear')
 }
 </script>
 

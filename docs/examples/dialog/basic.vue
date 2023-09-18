@@ -7,10 +7,10 @@ const text = ref('')
 
 <template>
   <du-button @click="render = true">Open Dialog</du-button>
-  <du-dialog v-model="render">
+  <du-dialog v-model="render" :close="false">
     <du-input v-model="text" />
     <template #footer>
-      <div style="padding-top: 1em; display: flex; justify-content: flex-end">
+      <div style="display: flex; justify-content: flex-end">
         <du-button>Confirm</du-button>
         <du-button type="warning" @click="render = false">Cancel</du-button>
       </div>

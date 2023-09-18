@@ -47,6 +47,10 @@ const emits = defineEmits<{
         background: var(--du--v3--#{$type}--color--opacity);
       }
 
+      &:active {
+        background: var(--du--v3--#{$type}--color--deep);
+      }
+
       &:disabled {
         background: var(--du--v3--#{$type}--color--disable);
       }
