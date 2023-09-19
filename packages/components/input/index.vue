@@ -8,7 +8,7 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<Props>(), {
-  modelModifiers: {},
+  modelModifiers: () => ({}),
   size: 'default',
   clearable: false
 })

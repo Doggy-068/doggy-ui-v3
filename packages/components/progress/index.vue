@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Type } from '../../types'
+import { computed } from 'vue'
 
 defineOptions({
   name: 'du-progress'
@@ -10,17 +11,27 @@ const props = withDefaults(defineProps<{
   progress?: number
   indicator?: boolean
   indicatorFormatter?(progress: number): string
+  color?: { color: string, percentage: number }[]
 }>(), {
   type: 'primary',
   progress: 0,
   indicator: false
+})
+
+const colorOrdered = computed(() => props.color?.sort((a, b) => b.percentage - a.percentage) || [])
+const barColor = computed(() => {
+  for (const { color, percentage } of colorOrdered.value) {
+    if (props.progress >= percentage) {
+      return color
+    }
+  }
 })
 </script>
 
 <template>
   <div class="doggy-ui-v3-progress" :class="[`${props.type}`]">
     <div class="orbit">
-      <div class="bar" :style="{ width: `${props.progress}%` }"></div>
+      <div class="bar" :style="{ width: `${props.progress}%`, background: barColor }"></div>
     </div>
     <span v-if="props.indicator && props.indicatorFormatter" class="indicator">{{ props.indicatorFormatter && props.indicatorFormatter(props.progress) }}</span>
   </div>
