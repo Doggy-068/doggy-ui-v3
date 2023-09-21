@@ -11,6 +11,7 @@ export default defineConfig({
       include: ['packages/**'],
       exclude: [
         'packages/icon/**',
+        'packages/utils/**',
         'packages/**/*.test.ts'
       ]
     })
