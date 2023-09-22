@@ -17,4 +17,8 @@ describe('test du-pagination', () => {
     await wrapper.find('.prev').trigger('click')
     expect(wrapper.props('index')).toBe(1)
   })
+
+  test('limit numeric items', () => {
+    expect(wrapper.findAll('.item').filter(item => Number(item.text()) > 0).length).toBeLessThanOrEqual(wrapper.props('pager'))
+  })
 })
