@@ -12,9 +12,11 @@ const props = withDefaults(defineProps<{
   size?: number
   index: number
   pager?: number
+  block?: boolean
 }>(), {
   size: 10,
-  pager: 7
+  pager: 7,
+  block: false
 })
 
 const emits = defineEmits<{
@@ -71,7 +73,7 @@ const handleNextItemClick = () => {
 </script>
 
 <template>
-  <div class="doggy-ui-v3-pagination">
+  <div class="doggy-ui-v3-pagination" :class="[props.block ? 'block' : '']">
     <span class="item prev" @click="handlePrevItemClick">
       <icon-left />
     </span>
@@ -87,6 +89,14 @@ const handleNextItemClick = () => {
   font-size: 14px;
   display: flex;
   align-items: center;
+
+  &.block {
+    .item {
+      width: 32px;
+      height: 32px;
+      background: var(--du--v3--grey-background);
+    }
+  }
 
   .item {
     flex-shrink: 0;
