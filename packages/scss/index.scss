@@ -6,7 +6,8 @@ $error-color: #ff6666;
 
 :root {
   --du--v3--white: #ffffff;
-  --du--v3--grey-background: #ececec;
+  --du--v3--grey--background: #ececec;
+  --du--v3--modal--background: #{color.adjust(#333333, $alpha: -0.7)};
 
   --du--v3--primary--color: #{$primary-color};
   --du--v3--primary--color--deep: #{color.adjust($primary-color, $blackness: 5%)};

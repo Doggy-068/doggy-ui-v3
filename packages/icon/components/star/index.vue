@@ -4,8 +4,10 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<{
-  full: boolean
-}>(), {})
+  full?: boolean
+}>(), {
+  full: false
+})
 </script>
 
 <template>

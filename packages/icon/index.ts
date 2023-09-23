@@ -10,6 +10,8 @@ import IconSelect from './components/select/index.vue'
 import IconLeft from './components/left/index.vue'
 import IconRight from './components/right/index.vue'
 import IconStar from './components/star/index.vue'
+import IconDown from './components/down/index.vue'
+import IconUp from './components/up/index.vue'
 
 export {
   IconClear,
@@ -23,5 +25,7 @@ export {
   IconSelect,
   IconLeft,
   IconRight,
-  IconStar
+  IconStar,
+  IconDown,
+  IconUp
 }

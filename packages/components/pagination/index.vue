@@ -94,7 +94,7 @@ const handleNextItemClick = () => {
     .item {
       width: 32px;
       height: 32px;
-      background: var(--du--v3--grey-background);
+      background: var(--du--v3--grey--background);
     }
   }
 

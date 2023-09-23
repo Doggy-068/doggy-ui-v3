@@ -60,7 +60,7 @@ const emits = defineEmits<{
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba($color: #eeeeee, $alpha: 0.5);
+  background: var(--du--v3--modal--background);
   display: flex;
   align-items: center;
   justify-content: center;

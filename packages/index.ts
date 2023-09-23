@@ -11,6 +11,7 @@ import DuPagination from './components/pagination/index.vue'
 import DuBadge from './components/badge/index.vue'
 import DuRate from './components/rate/index.vue'
 import DuDialog from './components/dialog/index.vue'
+import DuDrawer from './components/drawer/index.vue'
 
 export {
   DuButton,
@@ -26,5 +27,6 @@ export {
   DuPagination,
   DuBadge,
   DuRate,
-  DuDialog
+  DuDialog,
+  DuDrawer
 }
