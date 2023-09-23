@@ -13,6 +13,7 @@ import DuRate from './components/rate/index.vue'
 import DuDialog from './components/dialog/index.vue'
 import DuDrawer from './components/drawer/index.vue'
 import DuTooltip from './components/tooltip/index.vue'
+import DuText from './components/text/index.vue'
 
 export {
   DuButton,
@@ -30,5 +31,6 @@ export {
   DuRate,
   DuDialog,
   DuDrawer,
-  DuTooltip
+  DuTooltip,
+  DuText
 }
