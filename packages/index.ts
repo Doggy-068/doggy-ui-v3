@@ -12,6 +12,7 @@ import DuBadge from './components/badge/index.vue'
 import DuRate from './components/rate/index.vue'
 import DuDialog from './components/dialog/index.vue'
 import DuDrawer from './components/drawer/index.vue'
+import DuTooltip from './components/tooltip/index.vue'
 
 export {
   DuButton,
@@ -28,5 +29,6 @@ export {
   DuBadge,
   DuRate,
   DuDialog,
-  DuDrawer
+  DuDrawer,
+  DuTooltip
 }
