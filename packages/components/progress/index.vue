@@ -12,10 +12,12 @@ const props = withDefaults(defineProps<{
   indicator?: boolean
   indicatorFormatter?(progress: number): string
   color?: { color: string, percentage: number }[]
+  animation?: boolean
 }>(), {
   type: 'primary',
   progress: 0,
-  indicator: false
+  indicator: false,
+  animation: false
 })
 
 const colorOrdered = computed(() => props.color?.sort((a, b) => b.percentage - a.percentage) || [])
@@ -31,7 +33,7 @@ const barColor = computed(() => {
 <template>
   <div class="doggy-ui-v3-progress" :class="[`${props.type}`]">
     <div class="orbit">
-      <div class="bar" :style="{ width: `${props.progress}%`, background: barColor }"></div>
+      <div class="bar" :class="[props.animation ? 'animation' : '']" :style="{ width: `${props.progress}%`, background: barColor }"></div>
     </div>
     <span v-if="props.indicator && props.indicatorFormatter" class="indicator">{{ props.indicatorFormatter && props.indicatorFormatter(props.progress) }}</span>
   </div>
@@ -39,6 +41,20 @@ const barColor = computed(() => {
 
 <style lang="scss">
 @import '../../scss/variable.scss';
+
+@keyframes doggy-ui-v3-progress-animation {
+  from {
+    position: relative;
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    position: relative;
+    left: 100%;
+    transform: translateX(0);
+  }
+}
 
 .doggy-ui-v3-progress {
   display: flex;
@@ -61,6 +77,10 @@ const barColor = computed(() => {
         background: var(--du--v3--#{$type}--color);
       }
     }
+  }
+
+  .bar.animation {
+    animation: doggy-ui-v3-progress-animation 2s infinite linear;
   }
 
   .indicator {

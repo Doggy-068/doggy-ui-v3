@@ -16,6 +16,14 @@ button/size
 
 :::
 
+## Round
+
+::: demo
+
+button/round
+
+:::
+
 ## Disabled
 
 ::: demo
@@ -32,6 +40,7 @@ button/disabled
 | -------- | -------------- | ----------------------------------- | ----------- |
 | type     | button type    | `'primary' \| 'warning' \| 'error'` | `'primary'` |
 | size     | button size    | `'default' \| 'small'`              | `'default'` |
+| round    | button round   | `boolean`                           | `false`     |
 | disabled | disable button | `boolean`                           | `false`     |
 
 ### Events

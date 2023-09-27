@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import type { Props } from './types'
 
 defineOptions({
   name: 'du-tooltip'
 })
 
-const props = withDefaults(defineProps<{
-  trigger?: 'hover' | 'click'
-  position?: 'bottom' | 'right'
-  text?: string
-}>(), {
+const props = withDefaults(defineProps<Props>(), {
   trigger: 'hover',
-  position: 'bottom'
+  position: 'top'
 })
 
 const showTooltip = ref(false)
@@ -19,7 +16,11 @@ const showTooltip = ref(false)
 const content = ref<HTMLDivElement>()
 
 const tooltipStyle = computed(() => {
-  if (props.position === 'bottom') {
+  if (props.position === 'top') {
+    return { top: '-1em', transform: 'translateY(-100%)' }
+  } else if (props.position === 'left') {
+    return { left: '-1em', transform: 'translateX(-100%)' }
+  } else if (props.position === 'bottom') {
     return { top: `calc(1em + ${content.value?.clientHeight}px)` }
   } else if (props.position === 'right') {
     return { left: `calc(1em + ${content.value?.clientWidth}px)` }

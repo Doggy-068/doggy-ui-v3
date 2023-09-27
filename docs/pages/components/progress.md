@@ -24,6 +24,14 @@ progress/color
 
 :::
 
+## Animation
+
+::: demo
+
+progress/animation
+
+:::
+
 ## API
 
 ### Props
@@ -35,3 +43,4 @@ progress/color
 | indicator          | show indicator           | `boolean`                                 | `false`     |
 | indicatorFormatter | customize indicator text | `(progress: number): string`              | -           |
 | color              | customize color          | `{ color: string, percentage: number }[]` | -           |
+| animation          | enable animation         | `boolean`                                 | `false`     |

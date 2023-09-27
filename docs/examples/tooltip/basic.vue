@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { DuTooltip, DuButton, DuRadio, DuRadioOption } from 'doggy-ui-v3'
-const position = ref('bottom')
+const position = ref('top')
 const trigger = ref('hover')
 </script>
 
 <template>
   <du-radio v-model="position" style="margin-bottom: 0.5em">
+    <du-radio-option value="top">top</du-radio-option>
+    <du-radio-option value="left">left</du-radio-option>
     <du-radio-option value="bottom">bottom</du-radio-option>
     <du-radio-option value="right">right</du-radio-option>
   </du-radio>

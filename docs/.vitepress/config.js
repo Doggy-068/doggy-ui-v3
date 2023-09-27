@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { name, description } from '../../package.json'
+import { name, description, version } from '../../package.json'
 import mdPlugin from './plugins/md-plugin'
 import path from 'path'
 import fs from 'fs'
@@ -12,7 +12,8 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Guides', link: '/guides/installation' },
-      { text: 'Components', link: '/components/badge' }
+      { text: 'Components', link: '/components/badge' },
+      { text: version, link: 'https://www.npmjs.com/package/doggy-ui-v3?activeTab=versions' }
     ],
     sidebar: {
       '/guides/': {

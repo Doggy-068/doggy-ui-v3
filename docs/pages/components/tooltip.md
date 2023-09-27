@@ -20,11 +20,11 @@ tooltip/tooltip
 
 ### Props
 
-| Name     | Description            | Type                  | Default    |
-| -------- | ---------------------- | --------------------- | ---------- |
-| trigger  | how to trigger tooltip | `'hover' \| 'click'`  | `'hover'`  |
-| position | tooltip position       | `'bottom' \| 'right'` | `'bottom'` |
-| text     | tooltip text           | `string`              | -          |
+| Name     | Description            | Type                                     | Default   |
+| -------- | ---------------------- | ---------------------------------------- | --------- |
+| trigger  | how to trigger tooltip | `'hover' \| 'click'`                     | `'hover'` |
+| position | tooltip position       | `'top' \| 'left' \| 'bottom' \| 'right'` | `'top'`   |
+| text     | tooltip text           | `string`                                 | -         |
 
 ### Slots
 
