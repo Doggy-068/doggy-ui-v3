@@ -14,6 +14,7 @@ import DuDialog from './components/dialog/index.vue'
 import DuDrawer from './components/drawer/index.vue'
 import DuTooltip from './components/tooltip/index.vue'
 import DuText from './components/text/index.vue'
+import { vSpin } from './components/spin'
 
 export {
   DuButton,
@@ -32,5 +33,6 @@ export {
   DuDialog,
   DuDrawer,
   DuTooltip,
-  DuText
+  DuText,
+  vSpin
 }

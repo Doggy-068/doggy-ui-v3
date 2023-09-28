@@ -13,6 +13,7 @@ import IconStar from './components/star/index.vue'
 import IconDown from './components/down/index.vue'
 import IconUp from './components/up/index.vue'
 import IconCopy from './components/copy/index.vue'
+import IconLoading from './components/loading/index.vue'
 
 export {
   IconClear,
@@ -29,5 +30,6 @@ export {
   IconStar,
   IconDown,
   IconUp,
-  IconCopy
+  IconCopy,
+  IconLoading
 }
