@@ -17,13 +17,13 @@ const content = ref<HTMLDivElement>()
 
 const tooltipStyle = computed(() => {
   if (props.position === 'top') {
-    return { top: '-1em', transform: 'translateY(-100%)' }
+    return { top: '-14px', transform: 'translateY(-100%)' }
   } else if (props.position === 'left') {
-    return { left: '-1em', transform: 'translateX(-100%)' }
+    return { left: '-14px', transform: 'translateX(-100%)' }
   } else if (props.position === 'bottom') {
-    return { top: `calc(1em + ${content.value?.clientHeight}px)` }
+    return { top: `calc(14px + ${content.value?.clientHeight}px)` }
   } else if (props.position === 'right') {
-    return { left: `calc(1em + ${content.value?.clientWidth}px)` }
+    return { left: `calc(14px + ${content.value?.clientWidth}px)` }
   }
 })
 </script>
@@ -33,6 +33,7 @@ const tooltipStyle = computed(() => {
     <Transition name="doggy-ui-v3-tooltip">
       <div class="tooltip" v-show="showTooltip" :style="tooltipStyle">
         <slot name="tooltip">{{ props.text }}</slot>
+        <span class="arrow" :class="[props.position]"></span>
       </div>
     </Transition>
     <div class="content" ref="content" @mouseenter="props.trigger === 'hover' ? (showTooltip = true) : null" @mouseleave="props.trigger === 'hover' ? (showTooltip = false) : null" @click="props.trigger === 'click' ? (showTooltip = !showTooltip) : null">
@@ -65,11 +66,53 @@ const tooltipStyle = computed(() => {
   .tooltip {
     font-size: 14px;
     position: absolute;
+    z-index: 999;
     width: max-content;
     background: var(--du--v3--white);
     border: 1px solid var(--du--v3--border--color);
     border-radius: 4px;
-    padding: 0.5em;
+    padding: 0 0.5em;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+
+    .arrow {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      border: 1px solid var(--du--v3--border--color);
+      background: var(--du--v3--white);
+      transform: rotateZ(45deg);
+
+      &.top {
+        bottom: -4px;
+        left: 0.5em;
+        border-top-color: transparent;
+        border-left-color: transparent;
+      }
+
+      &.bottom {
+        top: -4px;
+        left: 0.5em;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+      }
+
+      &.right {
+        top: 0.5em;
+        left: -4px;
+        border-top-color: transparent;
+        border-right-color: transparent;
+      }
+
+      &.left {
+        top: 0.5em;
+        right: -4px;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+    }
   }
 }
 </style>
