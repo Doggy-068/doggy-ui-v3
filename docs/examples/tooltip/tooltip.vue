@@ -4,7 +4,7 @@ import { DuTooltip, DuButton, DuTag } from 'doggy-ui-v3'
 
 <template>
   <du-tooltip>
-    <template #tooltip>
+    <template #content>
       <div style="padding: 0.5em 0">
         <du-tag>This is a tag in tooltip!</du-tag>
       </div>

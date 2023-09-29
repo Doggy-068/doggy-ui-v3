@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { DuDrawer, DuButton, DuRadio, DuRadioOption } from 'doggy-ui-v3'
 import { ref } from 'vue'
+
 const position = ref('left')
 const showDrawer = ref(false)
 </script>
@@ -13,7 +14,7 @@ const showDrawer = ref(false)
     <du-radio-option value="bottom">bottom</du-radio-option>
   </du-radio>
   <du-button @click="showDrawer = true" size="small">Open Drawer</du-button>
-  <du-drawer v-model="showDrawer" :position="position">
-    <p>This is a drawer!</p>
+  <du-drawer v-model="showDrawer" :position="position" title="This is a title">
+    <p>This is content...</p>
   </du-drawer>
 </template>

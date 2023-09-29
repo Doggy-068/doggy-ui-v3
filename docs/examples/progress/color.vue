@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { DuProgress } from 'doggy-ui-v3'
+
 const color = [{
   color: '#ade4bd',
   percentage: 10

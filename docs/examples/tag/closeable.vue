@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import { DuTag } from 'doggy-ui-v3'
 
 const tags = ref<string[]>(['Cola', 'Juice'])
-
 const handleTagClose = (idx: number) => {
   tags.value.splice(idx, 1)
 }

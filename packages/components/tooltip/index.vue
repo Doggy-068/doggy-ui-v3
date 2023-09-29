@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const showTooltip = ref(false)
 
-const content = ref<HTMLDivElement>()
+const reference = ref<HTMLDivElement>()
 
 const tooltipStyle = computed(() => {
   if (props.position === 'top') {
@@ -21,9 +21,9 @@ const tooltipStyle = computed(() => {
   } else if (props.position === 'left') {
     return { left: '-14px', transform: 'translateX(-100%)' }
   } else if (props.position === 'bottom') {
-    return { top: `calc(14px + ${content.value?.clientHeight}px)` }
+    return { top: `calc(14px + ${reference.value?.clientHeight}px)` }
   } else if (props.position === 'right') {
-    return { left: `calc(14px + ${content.value?.clientWidth}px)` }
+    return { left: `calc(14px + ${reference.value?.clientWidth}px)` }
   }
 })
 </script>
@@ -32,11 +32,11 @@ const tooltipStyle = computed(() => {
   <div class="doggy-ui-v3-tooltip">
     <Transition name="doggy-ui-v3-tooltip">
       <div class="tooltip" v-show="showTooltip" :style="tooltipStyle">
-        <slot name="tooltip">{{ props.text }}</slot>
+        <slot name="content">{{ props.text }}</slot>
         <span class="arrow" :class="[props.position]"></span>
       </div>
     </Transition>
-    <div class="content" ref="content" @mouseenter="props.trigger === 'hover' ? (showTooltip = true) : null" @mouseleave="props.trigger === 'hover' ? (showTooltip = false) : null" @click="props.trigger === 'click' ? (showTooltip = !showTooltip) : null">
+    <div ref="reference" @mouseenter="props.trigger === 'hover' ? (showTooltip = true) : null" @mouseleave="props.trigger === 'hover' ? (showTooltip = false) : null" @click="props.trigger === 'click' ? (showTooltip = !showTooltip) : null">
       <slot></slot>
     </div>
   </div>

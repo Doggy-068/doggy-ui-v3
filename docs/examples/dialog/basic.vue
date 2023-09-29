@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { DuDialog, DuButton, DuInput } from 'doggy-ui-v3'
 import { ref } from 'vue'
+
 const render = ref(false)
 const text = ref('')
 </script>

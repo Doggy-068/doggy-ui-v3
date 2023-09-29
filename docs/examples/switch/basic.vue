@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { DuSwitch } from 'doggy-ui-v3'
 import { ref } from 'vue'
+
 const value1 = ref(false)
 const value2 = ref(false)
 </script>

@@ -1,14 +1,11 @@
 <script setup lang="ts">
-import type { Size } from '../../types'
+import type { Props } from './types'
 
 defineOptions({
   name: 'du-switch'
 })
 
-const props = withDefaults(defineProps<{
-  modelValue: boolean
-  size?: Size
-}>(), {
+const props = withDefaults(defineProps<Props>(), {
   size: 'default'
 })
 

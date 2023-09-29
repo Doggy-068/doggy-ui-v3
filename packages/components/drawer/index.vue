@@ -9,6 +9,7 @@ defineOptions({
 const props = withDefaults(defineProps<{
   modelValue: boolean
   position?: 'top' | 'right' | 'bottom' | 'left'
+  title?: string
 }>(), {
   position: 'right'
 })
@@ -39,7 +40,8 @@ const done = ref(false)
       <div class="doggy-ui-v3-drawer" v-show="props.modelValue">
         <div class="drawer" :class="[props.position, done ? 'done' : '']">
           <div class="header">
-            <component :is="icon" style="cursor: pointer" @click="emits('update:modelValue', false)" />
+            <component :is="icon" style="cursor: pointer; margin-right: 0.5em" @click="emits('update:modelValue', false)" />
+            <slot name="title">{{ props.title }}</slot>
           </div>
           <div class="content">
             <slot></slot>
@@ -122,6 +124,9 @@ $heightV: 40%;
     background: var(--du--v3--white);
     box-sizing: border-box;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
 
     &.top {
       height: $heightV;
@@ -162,8 +167,15 @@ $heightV: 40%;
     }
 
     .header {
+      display: flex;
+      align-items: center;
       font-size: 16px;
-      padding-bottom: 1em;
+      font-weight: bold;
+    }
+
+    .content {
+      height: 100%;
+      overflow: auto;
     }
   }
 }

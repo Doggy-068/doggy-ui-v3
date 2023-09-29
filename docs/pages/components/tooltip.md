@@ -28,7 +28,7 @@ tooltip/tooltip
 
 ### Slots
 
-| Name    | Description       |
-| ------- | ----------------- |
-| default | customize content |
-| tooltip | customize tooltip |
+| Name    | Description                   |
+| ------- | ----------------------------- |
+| default | element which trigger tooltip |
+| content | customize tooltip content     |

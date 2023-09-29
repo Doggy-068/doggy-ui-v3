@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { DuTooltip, DuButton, DuRadio, DuRadioOption } from 'doggy-ui-v3'
+
 const position = ref('top')
 const trigger = ref('hover')
 </script>
