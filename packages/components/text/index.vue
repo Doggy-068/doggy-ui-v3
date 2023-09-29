@@ -9,8 +9,11 @@ defineOptions({
 
 const props = withDefaults(defineProps<{
   copy?: boolean
+  ellipsis?: boolean
+  width?: string
 }>(), {
-  copy: false
+  copy: false,
+  ellipsis: false
 })
 
 const content = ref<HTMLSpanElement>()
@@ -29,8 +32,8 @@ const handleCopyClick = async () => {
 </script>
 
 <template>
-  <span class="doggy-ui-v3-text">
-    <span class="content" ref="content">
+  <span class="doggy-ui-v3-text" :style="{ width: props.width }">
+    <span ref="content" class="content" :class="[props.ellipsis ? 'ellipsis' : '']">
       <slot></slot>
     </span>
     <span v-if="props.copy" style="margin-left: 0.5em; cursor: pointer; height: 1em">
@@ -45,5 +48,17 @@ const handleCopyClick = async () => {
   display: inline-flex;
   align-items: center;
   font-size: 14px;
+  width: 100%;
+  max-width: fit-content;
+
+  .content {
+    width: 100%;
+
+    &.ellipsis {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
 }
 </style>
