@@ -2,6 +2,10 @@
 import { IconStar } from '../../icon'
 import { computed } from 'vue'
 
+defineOptions({
+  name: 'du-rate'
+})
+
 const props = withDefaults(defineProps<{
   modelValue: number
   max?: number

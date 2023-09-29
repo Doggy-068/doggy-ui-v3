@@ -7,7 +7,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<{
   modelValue: boolean
-  size?: Exclude<Size, 'large'>
+  size?: Size
 }>(), {
   size: 'default'
 })

@@ -7,7 +7,7 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<{
-  size?: Exclude<Size, 'large'>
+  size?: Size
   color?: string
   closeable?: boolean
 }>(), {

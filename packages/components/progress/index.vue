@@ -40,8 +40,6 @@ const barColor = computed(() => {
 </template>
 
 <style lang="scss">
-@import '../../scss/variable.scss';
-
 @keyframes doggy-ui-v3-progress-animation {
   from {
     position: relative;
@@ -69,7 +67,7 @@ const barColor = computed(() => {
     overflow: hidden;
   }
 
-  @each $type in $types {
+  @each $type in (primary, warning, error) {
     &.#{$type} {
       .bar {
         border-radius: 8px;

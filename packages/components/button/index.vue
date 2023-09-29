@@ -7,8 +7,8 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<{
-  type?: Type,
-  size?: Exclude<Size, 'large'>
+  type?: Type
+  size?: Size
   round?: boolean
   disabled?: boolean
   loading?: boolean

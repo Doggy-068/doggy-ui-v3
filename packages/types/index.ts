@@ -1,2 +1,2 @@
-export type Size = 'small' | 'default' | 'large'
+export type Size = 'small' | 'default'
 export type Type = 'primary' | 'warning' | 'error'

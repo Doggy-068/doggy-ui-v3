@@ -33,8 +33,6 @@ const handleAnchorClick = (e: Event) => {
 </template>
 
 <style lang="scss">
-@import '../../scss/variable.scss';
-
 .doggy-ui-v3-link {
   cursor: pointer;
   font-size: 16px;
@@ -43,7 +41,7 @@ const handleAnchorClick = (e: Event) => {
     margin-left: 0.5em;
   }
 
-  @each $type in $types {
+  @each $type in (primary, warning, error) {
     &.#{$type} {
       color: var(--du--v3--#{$type}--color);
 
