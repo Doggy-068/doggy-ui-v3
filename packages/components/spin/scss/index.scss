@@ -1,25 +1,5 @@
-@keyframes doggy-ui-v3-spin-mask-icon-animation {
-  0% {
-    transform: rotateZ(0deg);
-  }
-
-  25% {
-    transform: rotateZ(90deg);
-  }
-
-  50% {
-    transform: rotateZ(180deg);
-  }
-
-  75% {
-    transform: rotateZ(270deg);
-  }
-
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
+@import "../../../scss/animation.scss";
 
 .doggy-ui-v3-spin-mask-icon {
-  animation: doggy-ui-v3-spin-mask-icon-animation 1s infinite linear;
+  animation: du-rotate-clockwise 1s infinite linear;
 }

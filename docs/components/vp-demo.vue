@@ -23,16 +23,16 @@ const handleCopyClick = async () => {
 
 <template>
   <div class="examples-showcase">
-    <div class="component-box">
+    <div>
       <component :is="examples[props.path].default" />
-      <div class="control-box">
-        <du-tooltip :text="isCodeShow ? 'hide code' : 'show code'">
-          <doc-icon-code @click="isCodeShow = !isCodeShow" style="cursor: pointer" :style="{ color: isCodeShow ? 'var(--docsearch-primary-color)' : 'var(--vp-c-text-1)' }" />
-        </du-tooltip>
-        <du-tooltip text="copy code">
-          <doc-icon-copy @click="handleCopyClick" style="cursor: pointer" />
-        </du-tooltip>
-      </div>
+    </div>
+    <div class="control-box">
+      <du-tooltip :text="isCodeShow ? 'hide code' : 'show code'">
+        <doc-icon-code @click="isCodeShow = !isCodeShow" style="cursor: pointer" :style="{ color: isCodeShow ? 'var(--docsearch-primary-color)' : 'var(--vp-c-text-1)' }" />
+      </du-tooltip>
+      <du-tooltip text="copy code">
+        <doc-icon-copy @click="handleCopyClick" style="cursor: pointer" />
+      </du-tooltip>
     </div>
     <div v-show="isCodeShow" style="overflow: auto">
       <pre v-html="highlightCode"></pre>
@@ -49,15 +49,12 @@ $color: #e9e9e9;
   border-radius: 8px;
 }
 
-.component-box {
-  border-bottom: 1px solid $color;
-}
-
 .control-box {
   padding: 0.5em 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   column-gap: 1em;
+  border-bottom: 1px solid $color;
 }
 </style>

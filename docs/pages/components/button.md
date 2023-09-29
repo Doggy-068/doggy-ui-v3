@@ -32,6 +32,14 @@ button/disabled
 
 :::
 
+## Loading
+
+::: demo
+
+button/loading
+
+:::
+
 ## API
 
 ### Props
@@ -42,6 +50,7 @@ button/disabled
 | size     | button size    | `'default' \| 'small'`              | `'default'` |
 | round    | button round   | `boolean`                           | `false`     |
 | disabled | disable button | `boolean`                           | `false`     |
+| loading  | is loading     | `boolean`                           | `false`     |
 
 ### Events
 

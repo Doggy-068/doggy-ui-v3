@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Type, Size } from '../../types'
+import { IconLoading } from '../../icon'
 
 defineOptions({
   name: 'du-button'
@@ -10,11 +11,13 @@ const props = withDefaults(defineProps<{
   size?: Exclude<Size, 'large'>
   round?: boolean
   disabled?: boolean
+  loading?: boolean
 }>(), {
   type: 'primary',
   size: 'default',
   round: false,
-  disabled: false
+  disabled: false,
+  loading: false
 })
 
 const emits = defineEmits<{
@@ -23,13 +26,14 @@ const emits = defineEmits<{
 </script>
 
 <template>
-  <button class="doggy-ui-v3-button" :class="[`${props.type}`, `${props.size}`, props.round ? 'round' : '']" @click="emits('click')" :disabled="props.disabled">
+  <button class="doggy-ui-v3-button" :class="[`${props.type}`, `${props.size}`, props.round ? 'round' : '']" @click="emits('click')" :disabled="props.disabled || props.loading">
+    <icon-loading v-if="props.loading" class="icon-loading" />
     <slot></slot>
   </button>
 </template>
 
 <style lang="scss">
-@import '../../scss/variable.scss';
+@import "../../scss/animation.scss";
 
 .doggy-ui-v3-button {
   cursor: pointer;
@@ -37,12 +41,14 @@ const emits = defineEmits<{
   color: var(--du--v3--white);
   padding: 0 1em;
   border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
 
   &:not(:first-of-type) {
     margin-left: 0.5em;
   }
 
-  @each $type in $types {
+  @each $type in (primary, warning, error) {
     &.#{$type} {
       background: var(--du--v3--#{$type}--color);
 
@@ -66,7 +72,6 @@ const emits = defineEmits<{
 
   &.small {
     height: 28px;
-    line-height: 28px;
     font-size: 14px;
 
     &.round {
@@ -76,12 +81,17 @@ const emits = defineEmits<{
 
   &.default {
     height: 32px;
-    line-height: 32px;
     font-size: 16px;
 
     &.round {
       border-radius: 16px;
     }
+  }
+
+  .icon-loading {
+    font-size: small;
+    margin-right: 0.5em;
+    animation: du-rotate-clockwise 1s infinite linear;
   }
 }
 </style>
