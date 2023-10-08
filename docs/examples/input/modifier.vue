@@ -8,7 +8,7 @@ const value3 = ref<string>('')
 </script>
 
 <template>
-  <du-input v-model.trim="value1" style="margin-bottom: 0.5em" />
+  <du-input v-model.trim="value1" outline style="margin-bottom: 0.5em" />
   <du-input v-model.number="value2" style="margin-bottom: 0.5em" />
   <du-input v-model.capitalize="value3" />
 </template>

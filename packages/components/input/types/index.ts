@@ -5,4 +5,5 @@ export type Props = {
   modelModifiers?: Record<string, boolean>
   size?: Size
   clearable?: boolean
+  outline?: boolean
 }

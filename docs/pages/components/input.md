@@ -33,6 +33,7 @@ input/modifier
 | model-value / v-model | binding value      | `string \| number`     | -           |
 | size                  | input size         | `'default' \| 'small'` | `'default'` |
 | clearable             | is input clearable | `boolean`              | `false`     |
+| outline               | input outline      | `boolean`              | `false`     |
 
 ### modelModifiers
 

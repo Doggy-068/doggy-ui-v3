@@ -10,7 +10,8 @@ defineOptions({
 const props = withDefaults(defineProps<Props>(), {
   modelModifiers: () => ({}),
   size: 'default',
-  clearable: false
+  clearable: false,
+  outline: false
 })
 
 const emits = defineEmits<{
@@ -48,7 +49,7 @@ const handleClearClick = () => {
 
 <template>
   <div class="doggy-ui-v3-input" :class="[`${props.size}`]">
-    <input ref="inputRef" :value="props.modelValue" @input="onInput" />
+    <input ref="inputRef" :value="props.modelValue" @input="onInput" :class="[props.outline ? 'outline' : '']" />
     <icon-clear v-if="props.clearable" class="clear" @click="handleClearClick" />
   </div>
 </template>
@@ -66,6 +67,12 @@ const handleClearClick = () => {
     height: 100%;
     width: 100%;
     padding: 0 2em 0 0.8em;
+
+    &.outline {
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid #cccccc;
+    }
 
     &:focus {
       border-color: var(--du--v3--primary--color);
