@@ -2,6 +2,7 @@
 import { getCurrentInstance, computed } from 'vue'
 import { IconSquare, IconCorrect } from '../../../../icon'
 import type { CheckboxProps } from '../../types'
+import { getInstanceBySearchParent } from '../../../../utils/component'
 
 defineOptions({
   name: 'du-checkbox-option'
@@ -25,7 +26,7 @@ const handleItemClick = () => {
       return modelValue.concat(props.value)
     }
   })()
-  instance?.parent?.emit('update:modelValue', value)
+  getInstanceBySearchParent(instance, 'du-checkbox')?.emit('update:modelValue', value)
 }
 </script>
 

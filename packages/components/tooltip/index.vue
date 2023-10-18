@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<Props>(), {
   position: 'top'
 })
 
-const showTooltip = ref(false)
+const showTooltip = ref<boolean>(false)
 
 const reference = ref<HTMLDivElement>()
 

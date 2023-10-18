@@ -2,6 +2,7 @@
 import { getCurrentInstance, computed } from 'vue'
 import { IconCircle, IconSelect } from '../../../../icon'
 import type { RadioProps } from '../../types'
+import { getInstanceBySearchParent } from '../../../../utils/component'
 
 defineOptions({
   name: 'du-radio-option'
@@ -16,7 +17,7 @@ const props = withDefaults(defineProps<{
 const isSelected = computed(() => (instance?.parent?.props as RadioProps).modelValue === props.value)
 
 const handleItemClick = () => {
-  instance?.parent?.emit('update:modelValue', props.value)
+  getInstanceBySearchParent(instance, 'du-radio')?.emit('update:modelValue', props.value)
 }
 </script>
 

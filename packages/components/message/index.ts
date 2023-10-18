@@ -2,7 +2,7 @@ import { h, render } from 'vue'
 import DuMessage from './index.vue'
 import type { Props } from './types'
 
-type Option = Omit<Props, 'idx'> & { duration: number }
+type Option = Omit<Props, 'idx'> & { duration?: number }
 
 let seed = 1
 

@@ -16,6 +16,7 @@ import DuTooltip from './components/tooltip/index.vue'
 import DuText from './components/text/index.vue'
 import { vSpin } from './components/spin'
 import DuSwitch from './components/switch/index.vue'
+import { DuDropdown, DuDropdownOption } from './components/dropdown'
 
 export {
   DuButton,
@@ -36,5 +37,7 @@ export {
   DuTooltip,
   DuText,
   vSpin,
-  DuSwitch
+  DuSwitch,
+  DuDropdown,
+  DuDropdownOption
 }
