@@ -18,6 +18,7 @@ import { vSpin } from './components/spin'
 import DuSwitch from './components/switch/index.vue'
 import { DuDropdown, DuDropdownOption } from './components/dropdown'
 import { DuSelect, DuSelectOption } from './components/select'
+import notification from './components/notification'
 
 export {
   DuButton,
@@ -42,5 +43,6 @@ export {
   DuDropdown,
   DuDropdownOption,
   DuSelect,
-  DuSelectOption
+  DuSelectOption,
+  notification
 }
